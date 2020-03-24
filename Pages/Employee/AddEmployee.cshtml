@@ -1,0 +1,36 @@
+﻿@page "{departmentId:int}"
+@using Three.Models
+@model ThreeRazor.Pages.Employee.AddEmployeeModel
+
+<form method="post">
+
+    <div class="row form-group">
+        <div class="col-md-2 offset-md-2">
+            <label asp-for="Employee.FirstName"></label>
+        </div>
+        <div class="col-md-6">
+            <input class="form-control" asp-for="Employee.FirstName" />
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-md-2 offset-md-2">
+            <label asp-for="Employee.LastName"></label>
+        </div>
+        <div class="col-md-6">
+            <input class="form-control" asp-for="Employee.LastName" />
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-md-2 offset-md-2">
+            <label asp-for="Employee.Gender"></label>
+        </div>
+        <div class="col-md-6">
+            <select class="form-control" asp-for="Employee.Gender" asp-items="Html.GetEnumSelectList<Gender>()"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 offset-md-2">
+            <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+    </div>
+</form>
